@@ -77,8 +77,6 @@
 					position: relative
 					transition: all 0.3s ease-in-out 0s
 					-webkit-transition: all 0.3s ease-in-out 0s
-					&:hover, &:active
-						color: transparentize($red, 0.2)
 					&::before
 						content: ""
 						position: absolute
@@ -122,6 +120,8 @@
 		justify-content: space-between
 		.column
 			height: 600px
+			a
+				text-decoration: none
 			&.sixty
 				width: 60%
 			&.fourty
@@ -187,9 +187,11 @@
 		margin: 20px 0
 	h2
 		font-size: 3em
-	.intro
+	.intro, .our-work
 		text-align: center
 		color: $dark
+		span
+			color: $red
 	.full-screen
 		height: 100vh
 		position: relative
@@ -206,7 +208,6 @@
 			font-size: 1.2em
 			margin-bottom: 50px
 		.button
-			display: inline-block
 			border: 1px solid $white
 			color: $white
 			background-image: linear-gradient(to top, $white 50%, transparent 50%)
@@ -275,6 +276,7 @@
 					padding: 0
 					display: inline-block
 	.button
+		display: inline-block
 		font-weight: 700
 		color: $red
 		text-decoration: none
@@ -299,12 +301,32 @@
 			-ms-transition: background-position 300ms, color 300ms ease, border-color 300ms ease
 			-o-transition: background-position 300ms, color 300ms ease, border-color 300ms ease
 			transition: background-position 300ms, color 300ms ease, border-color 300ms ease
-
+	.reviews
+		ul
+			display: flex
+			margin: 0
+			padding: 0
+			li
+				padding: 0
+				width: 25%
+				list-style: none
+		a
+			color: $red
 @media only screen and (max-width: 700px)
 	#root
 		.text-wrapper
-			left: 10px
+			left: 0
+			h1
+				font-size: 3em
 		.grid
 			display: block
 			.column
 				width: 100% !important
+		.reviews
+			ul
+				justify-content: center
+				li
+					display: none
+					&.show
+						display: block
+						width: 90%
