@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route, NavLink} from 'react-router-dom'
+import { stack as Menu } from 'react-burger-menu'
 import Landing from './pages/Landing'
 import Work from './pages/Work'
 import Doors from './pages/Doors'
@@ -34,19 +35,15 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <div className="navbar">
-            <ul>
-							{
-								navItems.map((navItem, i) => {
-									return (
-										<li className="nav-item" key={i}>
-											<NavLink exact to={navItem.path} activeClassName="active">{navItem.name}</NavLink>
-										</li>
-									)
-								})
-							}
-            </ul>
-          </div>
+					<Menu right noOverlay burgerButtonClassName={"fa fa-bars menu-button"}>
+						{
+							navItems.map((navItem, i) => {
+								return (
+									<NavLink key={i} exact to={navItem.path} activeClassName="active">{navItem.name}</NavLink>
+								)
+							})
+						}
+          </Menu>
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/work/" component={Work} />

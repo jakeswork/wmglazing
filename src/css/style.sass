@@ -48,52 +48,30 @@
 	font-family: 'Karla', sans-serif
 	-webkit-font-smoothing: antialiased
 	color: $white
-
+	.menu-button
+		position: fixed
+		right: 0
+		padding: 15px
+		font-size: 30px
+		z-index: 9999 !important
+	.bm-item-list
+		background: $dark
+		padding: 20px
+		a
+			margin: 10px 0
+			text-decoration: none
+			color: $white
+			font-size: 30px
+			padding: 10px 0
+			transition: all .3s ease-in-out
+			&:hover
+				color: $red
+			&.active
+				font-weight: 700
 	.wrapper
 		max-width: 960px
 		padding: 20px 26px
 		margin: 0 auto
-
-	.navbar
-		background: rgba(255,255,255,0.2)
-		padding: 20px 0
-		position: absolute
-		top: 0
-		left: 0
-		right: 0
-		z-index: 1
-		ul
-			display: flex
-			padding: 0
-			margin: 0
-			justify-content: space-around
-			li
-				display: inline-block
-				list-style: none
-				a
-					text-decoration: none
-					color: $red
-					font-size: 20px
-					position: relative
-					transition: all 0.3s ease-in-out 0s
-					-webkit-transition: all 0.3s ease-in-out 0s
-					&::before
-						content: ""
-						position: absolute
-						width: 100%
-						height: 2px
-						bottom: 0
-						left: 0
-						background-color: $red
-						visibility: hidden
-						-webkit-transform: scaleX(0)
-						transform: scaleX(0)
-						-webkit-transition: all 0.3s ease-in-out 0s
-						transition: all 0.3s ease-in-out 0s
-					&:hover:before, &.active:before
-						visibility: visible
-						-webkit-transform: scaleX(1)
-						transform: scaleX(1)
 	.landing
 		background: url('../images/background.jpg') center fixed
 		background-size: cover
@@ -316,12 +294,24 @@
 	#root
 		.text-wrapper
 			left: 0
+			text-align: center
 			h1
 				font-size: 3em
+		.landing
+			background-attachment: scroll
+			i
+				bottom: 10px
+		.button
+			background: $red
+			color: $white
+		.contact .button
+			background: $white
+			color: $red
 		.grid
-			display: block
+			flex-direction: column
 			.column
 				width: 100% !important
+				margin-top: -20px !important
 		.reviews
 			ul
 				justify-content: center
