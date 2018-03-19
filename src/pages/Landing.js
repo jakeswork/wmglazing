@@ -58,7 +58,7 @@ class Landing extends Component {
 						</div>
           </div>
       	</section>
-				<section className="wrapper our-work">
+				<section className="wrapper feedback">
 					<h2>We <span>Love</span> Our Customers</h2>
 					<p>...and they love us too!</p>
 					<CustomerReviews />
